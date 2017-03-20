@@ -3,6 +3,9 @@
   "description": "Update Airtable from GitHub API",
   "version": "0.1.0",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mesaugat/tech-companies-in-nepal-api"
