@@ -1,0 +1,21 @@
+{
+  "name": "tech-companies-in-nepal-api",
+  "description": "Update Airtable from GitHub API",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mesaugat/tech-companies-in-nepal-api"
+  },
+  "author": "Saugat Acharya",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "helmet": "^3.5.0",
+    "winston": "^2.3.1"
+  },
+  "engines": {
+    "node": "7.x"
+  }
+}
