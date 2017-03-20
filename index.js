@@ -17,8 +17,9 @@ app.get('/api', (req, res) => {
     let package = JSON.parse(string);
 
     let {name, version, description} = package;
+    let repository = package.repository.url
 
-    res.json({name, version, description});
+    res.json({name, version, description, repository});
   });
 });
 
