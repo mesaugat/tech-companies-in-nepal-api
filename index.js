@@ -16,10 +16,10 @@ app.get('/api', (req, res) => {
     let string = buffer.toString();
     let package = JSON.parse(string);
 
-    let {name, version, description} = package;
+    let { name, version, description } = package;
     let repository = package.repository.url
 
-    res.json({name, version, description, repository});
+    res.json({ name, version, description, repository });
   });
 });
 
