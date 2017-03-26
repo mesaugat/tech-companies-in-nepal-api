@@ -25,3 +25,5 @@ app.use((req, res) => res.forbidden());
 app.listen(app.get('port'), () => {
   winston.info('Node app is running on port', app.get('port'));
 });
+
+module.exports = app;

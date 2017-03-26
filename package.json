@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "NODE_ENV=test mocha test --recursive --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,10 @@
     "node": "7.x"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.18.0",
-    "eslint-plugin-node": "^4.2.1"
+    "eslint-plugin-node": "^4.2.1",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
   }
 }
