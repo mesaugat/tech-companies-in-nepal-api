@@ -4,7 +4,6 @@ const winston = require('winston');
 const Table = require('./lib/table');
 const _object = require('lodash/object');
 const collection = require('lodash/collection');
-
 const fetchCommit = require('./lib/fetch-commit');
 const processDiff = require('./lib/process-diff');
 
