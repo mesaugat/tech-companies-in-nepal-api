@@ -1,5 +1,11 @@
 const fs = require('fs');
 const app = require('express');
+const winston = require('winston');
+const _object = require('lodash/object');
+const fetchCommit = require('./lib/fetch-commit');
+const processDiff = require('./lib/process-diff');
+
+const { get } = _object;
 
 /**
  * Express router.
