@@ -63,7 +63,7 @@ router.get('/companies', (req, res) => {
  */
 router.post('/webhook', (req, res) => {
   if (req.get('X-Github-Event') !== 'push') {
-    return res.badRequest();
+    return res.accepted();
   }
 
   let { after: newSha, ref } = req.body;
