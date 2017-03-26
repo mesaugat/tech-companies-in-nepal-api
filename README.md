@@ -4,7 +4,7 @@ Simple API to process diffs from [tech-companies-in-nepal](https://github.com/me
 
 ### Contributing
 
-For contribution and feature requests, please create an [issue](issues/new) first.
+For contribution and feature requests, please create an [issue](https://github.com/mesaugat/tech-companies-in-nepal-api/issues/new) first.
 
 ### License
 
