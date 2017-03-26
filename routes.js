@@ -3,10 +3,13 @@ const app = require('express');
 const winston = require('winston');
 const Table = require('./lib/table');
 const _object = require('lodash/object');
+const collection = require('lodash/collection');
+
 const fetchCommit = require('./lib/fetch-commit');
 const processDiff = require('./lib/process-diff');
 
 const { get } = _object;
+const { sortBy } = collection;
 
 /**
  * Express router.
@@ -45,7 +48,9 @@ router.get('/companies', (req, res) => {
         };
       });
 
-      return res.json(companies);
+      let sortedList = sortBy(companies, (company) => company.name.toLowerCase());
+
+      return res.json(sortedList);
     })
     .catch((err) => {
       winston.error(err);
