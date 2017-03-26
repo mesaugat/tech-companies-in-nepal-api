@@ -13,6 +13,7 @@ module.exports = {
     mocha: true
   },
   rules: {
+    'newline-before-return': 2,
     'node/no-unpublished-require': 0,
     'node/exports-style': ['error', 'module.exports']
   }
