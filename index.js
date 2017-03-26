@@ -1,28 +1,27 @@
-const fs = require('fs');
 const helmet = require('helmet');
+const morgan = require('morgan');
 const express = require('express');
 const winston = require('winston');
+const routes = require('./routes');
 const bodyParser = require('body-parser');
+const jsonResponse = require('./middleware/response');
 
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
 
 app.use(helmet());
+app.use(morgan('tiny'));
 app.use(bodyParser.json());
 
-app.get('/api', (req, res) => {
-  fs.readFile('./package.json', (err, buffer) => {
-    let string = buffer.toString();
-    let package = JSON.parse(string);
+app.use(jsonResponse);
+app.use('/api', routes);
 
-    let { name, version, description } = package;
-    let repository = package.repository.url
+app.use((req, res) => res.forbidden());
 
-    res.json({ name, version, description, repository });
-  });
-});
-
+/**
+ * Listen for connections.
+ */
 app.listen(app.get('port'), () => {
   winston.info('Node app is running on port', app.get('port'));
 });
