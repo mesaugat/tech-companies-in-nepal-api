@@ -6,6 +6,7 @@ const _object = require('lodash/object');
 const collection = require('lodash/collection');
 const fetchCommit = require('./lib/fetch-commit');
 const processDiff = require('./lib/process-diff');
+const verifySignature = require('./middleware/verify-signature');
 
 const { get } = _object;
 const { sortBy } = collection;
@@ -61,7 +62,7 @@ router.get('/companies', (req, res) => {
 /**
  * Webhook URL for GitHub.
  */
-router.post('/webhook', (req, res) => {
+router.post('/webhook', verifySignature, (req, res) => {
   if (req.get('X-Github-Event') !== 'push') {
     return res.accepted();
   }
