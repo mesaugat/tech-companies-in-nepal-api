@@ -1,6 +1,7 @@
 const fs = require('fs');
 const app = require('express');
 const winston = require('winston');
+const Table = require('./lib/table');
 const _object = require('lodash/object');
 const fetchCommit = require('./lib/fetch-commit');
 const processDiff = require('./lib/process-diff');
@@ -21,10 +22,36 @@ router.get('/', (req, res) => {
     let package = JSON.parse(string);
 
     let { name, version, description } = package;
-    let repository = package.repository.url
+    let repository = package.repository.url;
 
     res.json({ name, version, description, repository });
   });
+});
+
+/**
+ * Get all companies.
+ */
+router.get('/companies', (req, res) => {
+  let companiesTable = new Table('Companies');
+
+  companiesTable.all()
+    .then(result => {
+      let companies = result.map(company => {
+        return {
+          name: company.fields['Name'],
+          website: company.fields['Website'],
+          location: company.fields['Location Text'],
+          description: company.fields['Description']
+        };
+      });
+
+      return res.json(companies);
+    })
+    .catch((err) => {
+      winston.error(err);
+
+      return res.serverError();
+    });
 });
 
 /**
