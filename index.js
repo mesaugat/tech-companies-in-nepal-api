@@ -5,6 +5,7 @@ const winston = require('winston');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
 const jsonResponse = require('./middleware/response');
+const errorHandler = require('./middleware/error-handler');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use(jsonResponse);
 app.use('/api', routes);
 
+app.use(errorHandler);
 app.use((req, res) => res.forbidden());
 
 /**
