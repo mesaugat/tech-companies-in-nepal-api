@@ -17,6 +17,20 @@ const signBlob = (blob) => {
 };
 
 /**
+ * Timing safe comparison of two strings.
+ *
+ * @param {String} a
+ * @param {String} b
+ * @returns {Boolean}
+ */
+const safeCompare = (a, b)  => {
+  const bufferA = Buffer.from(a, 'utf8');
+  const bufferB = Buffer.from(b, 'utf8');
+
+  return crypto.timingSafeEqual(bufferA, bufferB);
+};
+
+/**
  * Verify GitHub signature.
  *
  * @param {Object} req
@@ -39,7 +53,9 @@ const verifySignature = (req, res, next) => {
   const theirSignature = req.get('X-Hub-Signature');
   const ourSignature = signBlob(req.body);
 
-  if (theirSignature !== ourSignature) {
+  const safe = safeCompare(theirSignature, ourSignature);
+
+  if (!safe) {
     return res.badRequest('Invalid Signature');
   }
 
