@@ -1,7 +1,7 @@
 {
   "name": "tech-companies-in-nepal-api",
   "description": "Update Airtable from GitHub API",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
