@@ -4,7 +4,7 @@ Simple API to process diffs from [tech-companies-in-nepal](https://github.com/me
 
 ### Installation
 
-Clone the repository and install dependencies using [yarn](https://yarnpkg.com/en/).
+Clone the repository and install dependencies using [yarn](https://yarnpkg.com/en/)
 
 ```bash
 $ git clone git@github.com:mesaugat/tech-companies-in-nepal-api.git
@@ -16,8 +16,6 @@ $ yarn
 
 ### For Production Environment
 
-Set the following environment variables and start the application using `yarn start`.
-
 ```bash
 export PORT=4444
 export AIRTABLE_BASE='dummy'
@@ -25,15 +23,15 @@ export AIRTABLE_API_KEY='dummy'
 export GITHUB_WEBHOOK_SECRET='dummy'
 ```
 
-### For Test Environment
+Set the following environment variables and start the application using `yarn start`
 
-Make a copy of `.env.example` as `.env`, update the API keys and start the application.
+### For Test Environment
 
 ```bash
 $ cp .env.example .env
-
-$ yarn start  
 ```
+
+Make a copy of `.env.example` as `.env`, update the API keys and test the application using `yarn test`
 
 ### Scripts
 
