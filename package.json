@@ -31,6 +31,7 @@
     "parse-diff": "^0.4.0",
     "retext": "^5.0.0",
     "retext-keywords": "^4.0.0",
+    "serve-favicon": "^2.4.2",
     "winston": "^2.3.1"
   },
   "devDependencies": {
