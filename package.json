@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "start": "node index.js",
     "lint:fix": "eslint --fix .",
-    "test": "NODE_ENV=test mocha test --recursive --reporter spec"
+    "test": "NODE_ENV=test mocha test --recursive --reporter spec --exit"
   },
   "repository": {
     "type": "git",
@@ -22,25 +22,25 @@
   "dependencies": {
     "airtable": "^0.4.5",
     "body-parser": "^1.17.1",
-    "express": "^4.15.2",
+    "express": "^4.17.1",
     "helmet": "^3.5.0",
     "inflection": "^1.12.0",
-    "lodash": "^4.17.4",
-    "morgan": "^1.8.1",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1",
     "nlcst-to-string": "^2.0.0",
     "node-fetch": "^1.6.3",
     "parse-diff": "^0.4.0",
     "retext": "^5.0.0",
     "retext-keywords": "^4.0.0",
-    "serve-favicon": "^2.4.2",
+    "serve-favicon": "^2.5.0",
     "winston": "^2.3.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "dotenv": "^4.0.0",
-    "eslint": "^4.18.2",
+    "eslint": "^6.0.1",
     "eslint-plugin-node": "^4.2.1",
-    "mocha": "^3.2.0",
-    "supertest": "^3.0.0"
+    "mocha": "^6.1.4",
+    "supertest": "^4.0.2"
   }
 }
