@@ -6,7 +6,7 @@ const crypto = require('crypto');
  * @param {String|Object} blob
  * @returns {String}
  */
-const signBlob = (blob) => {
+const signBlob = blob => {
   if (typeof blob === 'object') {
     blob = JSON.stringify(blob);
   }
@@ -23,7 +23,7 @@ const signBlob = (blob) => {
  * @param {String} b
  * @returns {Boolean}
  */
-const safeCompare = (a, b)  => {
+const safeCompare = (a, b) => {
   const bufferA = Buffer.from(a, 'utf8');
   const bufferB = Buffer.from(b, 'utf8');
 
@@ -35,7 +35,7 @@ const safeCompare = (a, b)  => {
  *
  * @param {Object} req
  * @param {Object} res
- * @param {Buffer} buffer
+ * @param {Function} next
  */
 const verifySignature = (req, res, next) => {
   if (!req.get('X-Hub-Signature')) {

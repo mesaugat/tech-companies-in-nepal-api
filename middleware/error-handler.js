@@ -7,11 +7,12 @@ const winston = require('winston');
  * @param {Object} req
  * @param {Object} res
  */
-const errorHandler = (err, req, res, next) => {   // eslint-disable-line no-unused-vars
+const errorHandler = (err, req, res, next) => {
+  // eslint-disable-line no-unused-vars
   winston.error(err);
 
   if (err.name === 'ValidationError') {
-    return res.status(400).json({status: 400, message: err.message});
+    return res.status(400).json({ status: 400, message: err.message });
   }
 
   res.serverError();

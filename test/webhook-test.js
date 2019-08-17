@@ -27,9 +27,7 @@ const webhookNonMasterHeader = {
 dotenv.config();
 
 describe('POST /api/webhook', function() {
-
   describe('when payload is referencing master', function() {
-
     it('responds with 201 for a valid signature', function(done) {
       request(app)
         .post('/api/webhook')
@@ -38,7 +36,7 @@ describe('POST /api/webhook', function() {
         .expect(201, done);
     });
 
-    it('responds with 400 for an invalid signature', function (done) {
+    it('responds with 400 for an invalid signature', function(done) {
       webhookMasterPayload['X-Hub-Signature'] = 'RandomAsF';
 
       request(app)
@@ -47,11 +45,9 @@ describe('POST /api/webhook', function() {
         .send(webhookMasterPayload)
         .expect(400, done);
     });
-
   });
 
   describe('when payload is referencing master', function() {
-
     it('responds with 200', function(done) {
       request(app)
         .post('/api/webhook')
@@ -59,7 +55,5 @@ describe('POST /api/webhook', function() {
         .send(webhookNonMasterPayload)
         .expect(200, done);
     });
-
   });
-
 });

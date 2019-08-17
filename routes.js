@@ -37,7 +37,8 @@ router.get('/', (req, res) => {
 router.get('/companies', (req, res) => {
   let companiesTable = new Table('Companies');
 
-  companiesTable.all()
+  companiesTable
+    .all()
     .then(result => {
       let companies = result.map(company => {
         return {
@@ -48,11 +49,11 @@ router.get('/companies', (req, res) => {
         };
       });
 
-      let sortedList = sortBy(companies, (company) => company.name.toLowerCase());
+      let sortedList = sortBy(companies, company => company.name.toLowerCase());
 
       return res.json(sortedList);
     })
-    .catch((err) => {
+    .catch(err => {
       winston.error(err);
 
       return res.serverError();
@@ -75,7 +76,7 @@ router.post('/webhook', verifySignature, (req, res) => {
 
     fetchCommit(commitsUrl)
       .then(processDiff)
-      .catch((err) => {
+      .catch(err => {
         winston.error(err);
 
         return res.serverError();
