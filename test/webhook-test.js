@@ -47,7 +47,7 @@ describe('POST /api/webhook', function() {
     });
   });
 
-  describe('when payload is referencing master', function() {
+  describe('when payload is not referencing master', function() {
     it('responds with 200', function(done) {
       request(app)
         .post('/api/webhook')
