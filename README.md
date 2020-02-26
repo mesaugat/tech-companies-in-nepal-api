@@ -1,8 +1,10 @@
 # Tech Companies in Nepal API
 
+[![Build Status](https://travis-ci.com/mesaugat/tech-companies-in-nepal-api.svg?branch=master)](https://travis-ci.com/mesaugat/tech-companies-in-nepal-api)
+
 Simple API to process diffs from [tech-companies-in-nepal](https://github.com/mesaugat/tech-companies-in-nepal) and push it into an [Airtable](https://airtable.com/shrXv3YvlfxLnHJfr).
 
-### Installation
+## Installation
 
 Clone the repository and install dependencies using [yarn](https://yarnpkg.com/en/)
 
@@ -14,7 +16,7 @@ $ cd tech-companies-in-nepal-api
 $ yarn
 ```
 
-### For Production Environment
+## For Production Environment
 
 ```bash
 export PORT=4444
@@ -25,7 +27,7 @@ export GITHUB_WEBHOOK_SECRET='dummy'
 
 Set the following environment variables and start the application using `yarn start`
 
-### For Test Environment
+## For Test Environment
 
 ```bash
 $ cp .env.example .env
@@ -33,7 +35,7 @@ $ cp .env.example .env
 
 Make a copy of `.env.example` as `.env`, update the API keys and test the application using `yarn test`
 
-### Scripts
+## Scripts
 
 The following commands are available:
 
@@ -46,14 +48,14 @@ The following commands are available:
 
 Run a command using `yarn <command:name>`
 
-### Contributing
+## Contributing
 
 For contribution and feature requests, please create an [issue](https://github.com/mesaugat/tech-companies-in-nepal-api/issues/new) first.
 
-### License
+## License
 
 tech-companies-in-nepal-api is under [MIT License](LICENSE.md).
 
 ---
 
-__Most of the code is taken from [hww-api](https://github.com/poteto/hww-api).__
+__Most of the code has been taken from [hww-api](https://github.com/poteto/hww-api).__
