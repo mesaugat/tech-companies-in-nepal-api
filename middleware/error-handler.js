@@ -1,4 +1,6 @@
-const winston = require('winston');
+const utils = require('../lib/utils');
+
+const { logger } = utils;
 
 /**
  * Generic error handler.
@@ -9,7 +11,7 @@ const winston = require('winston');
  */
 const errorHandler = (err, req, res, next) => {
   // eslint-disable-line no-unused-vars
-  winston.error(err);
+  logger.error(err);
 
   if (err.name === 'ValidationError') {
     return res.status(400).json({ status: 400, message: err.message });

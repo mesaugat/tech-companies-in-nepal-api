@@ -1,6 +1,6 @@
 const fs = require('fs');
 const app = require('express');
-const winston = require('winston');
+const utils = require('./lib/utils');
 const Table = require('./lib/table');
 const _object = require('lodash/object');
 const collection = require('lodash/collection');
@@ -9,6 +9,7 @@ const processDiff = require('./lib/process-diff');
 const verifySignature = require('./middleware/verify-signature');
 
 const { get } = _object;
+const { logger } = utils;
 const { sortBy } = collection;
 
 /**
@@ -54,7 +55,7 @@ router.get('/companies', (req, res) => {
       return res.json(sortedList);
     })
     .catch(err => {
-      winston.error(err);
+      logger.error(err);
 
       return res.serverError();
     });
@@ -77,7 +78,7 @@ router.post('/webhook', verifySignature, (req, res) => {
     fetchCommit(commitsUrl)
       .then(processDiff)
       .catch(err => {
-        winston.error(err);
+        logger.error(err);
 
         return res.serverError();
       });
