@@ -14,7 +14,7 @@
     "url": "https://github.com/mesaugat/tech-companies-in-nepal-api"
   },
   "engines": {
-    "node": "8.x"
+    "node": "12.x"
   },
   "private": true,
   "author": "Saugat Acharya",
