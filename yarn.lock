@@ -1803,6 +1803,11 @@ picomatch@^2.0.4:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.1.tgz#21bac888b6ed8601f831ce7816e335bc779f0a4a"
   integrity sha512-ISBaA8xQNmwELC7eOjqFKMESB2VIqt4PPDD0nsS95b/9dZXvVKOlz9keMSnoGGKcOHXfTvDD6WMaRoSc9UuhRA==
 
+pos@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/pos/-/pos-0.4.2.tgz#20e9c77fbeedcc356823cea63c7585cace93be2a"
+  integrity sha1-IOnHf77tzDVoI86mPHWFys6Tvio=
+
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -1997,6 +2002,15 @@ retext-latin@^2.0.0:
   dependencies:
     parse-latin "^4.0.0"
     unherit "^1.0.4"
+
+retext-pos@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/retext-pos/-/retext-pos-2.0.2.tgz#a552e5af3d61fa5cb2903e09b1d6dc1814d284ca"
+  integrity sha512-ranVA3ucvW8yKohNA+TTBHGza+/+kWb+yqKFfvGJDD5FlukmG36tcDKJcUklY3O7QZnTm5vAArFPWRQibWNcmA==
+  dependencies:
+    nlcst-to-string "^2.0.0"
+    pos "^0.4.2"
+    unist-util-visit "^1.0.0"
 
 retext-stringify@^2.0.0:
   version "2.0.4"
