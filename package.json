@@ -28,7 +28,7 @@
     "lodash": "^4.17.20",
     "morgan": "^1.10.0",
     "nlcst-to-string": "^2.0.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "parse-diff": "^0.7.0",
     "retext": "^7.0.1",
     "retext-keywords": "^6.0.0",
