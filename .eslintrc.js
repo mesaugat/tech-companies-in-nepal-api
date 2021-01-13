@@ -18,6 +18,7 @@ module.exports = {
     'eol-last': 2,
     'spaced-comment': 2,
     'space-infix-ops': 2,
+    'no-trailing-spaces': 2,
     'newline-before-return': 2,
     'node/no-unpublished-require': 0,
     'node/exports-style': ['error', 'module.exports'],
